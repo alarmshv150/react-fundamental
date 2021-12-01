@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
+ReactDOM.render(<App />, document.getElementById("root"));
+
+/* ReactDOM - components rendering in the browser. */
+
+/* 
+Virtual DOM(tree of element) - a lighter copy of the browser DOM tree. 
+Nodes of the tree of element changing lead to the building of a new tree of element and compare with the previous one.
+*/
+
+/* JSX
+with
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+<div>
+  <button>TEXT</button>
+  </div>
+  )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  without
+  ReactDOM.render(
+  React.createElement("div",{},
+  React.createElement("button",{},"TEXT")
+  )
+)
+parameters:
+1)type
+2)props
+3)children
+ */
+
